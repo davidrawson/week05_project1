@@ -24,5 +24,17 @@ class Stock
     @id = results.first()['id'].to_i
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM stocks"
+    values = []
+    SqlRunner.run(sql, values)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM stocks"
+    values = []
+    results = SqlRunner.run( sql, values )
+    return results.map { |stock_hash| Stock.new(stock_hash) }
+  end
 
 end
