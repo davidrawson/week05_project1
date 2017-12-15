@@ -1,6 +1,7 @@
 require_relative ('../models/artist')
 require_relative ('../models/album')
 require_relative ('../models/stock')
+require ('pry-byebug')
 
 Artist.delete_all()
 Stock.delete_all()
@@ -111,3 +112,6 @@ stock9 = Stock.new({
   'sell_price' => '12.00',
   'reorder_level' => '8' })
 stock9.save()
+
+binding.pry
+nil

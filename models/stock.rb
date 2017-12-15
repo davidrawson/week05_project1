@@ -8,10 +8,10 @@ class Stock
   def initialize (options)
     @id = options['id'] if options['id']
     @album_id = options['album_id']
-    @quantity = options['quantity']
-    @buy_price = options['buy_price']
-    @sell_price = options['sell_price']
-    @reorder_level = options['reorder_level']
+    @quantity = options['quantity'].to_i
+    @buy_price = options['buy_price'].to_f
+    @sell_price = options['sell_price'].to_f
+    @reorder_level = options['reorder_level'].to_i
   end
 
   def save()
@@ -22,6 +22,14 @@ class Stock
     values = [@album_id, @quantity, @buy_price, @sell_price, @reorder_level]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
+  end
+
+  def check_stock_level
+    if @quantity > @reorder_level
+      reorder_status = "Stock ok."
+    else
+      reorder_status = "Re-order item."
+    end
   end
 
   def self.delete_all()
