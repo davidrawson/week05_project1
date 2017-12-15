@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS albums;
 DROP TABLE IF EXISTS artists;
 DROP TABLE IF EXISTS stocks;
 DROP TABLE IF EXISTS sales;
 DROP TABLE IF EXISTS distributors;
+DROP TABLE IF EXISTS albums;
 
 CREATE TABLE albums (
   id SERIAL4 PRIMARY KEY,
@@ -21,8 +21,8 @@ CREATE TABLE stocks (
   id SERIAL4 PRIMARY KEY,
   album_id INT4 REFERENCES albums(id),
   quantity INT4,
-  buy_price INT4,
-  sell_price INT4,
+  buy_price NUMERIC(6,2),
+  sell_price NUMERIC(6,2),
   reorder_level INT2
 );
 
