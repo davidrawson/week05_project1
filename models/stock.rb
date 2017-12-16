@@ -3,7 +3,8 @@ require_relative ('../db/sql_runner')
 
 class Stock
 
-  attr_reader :id, :album_id, :quantity, :buy_price, :sell_price, :reorder_level
+  attr_reader :id, :album_id
+  attr_accessor :quantity, :buy_price, :sell_price, :reorder_level
 
   def initialize (options)
     @id = options['id'] if options['id']
@@ -22,6 +23,15 @@ class Stock
     values = [@album_id, @quantity, @buy_price, @sell_price, @reorder_level]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
+  end
+
+  def update()
+    sql = "UPDATE stocks SET
+    (album_id, quantity, buy_price, sell_price, reorder_level)
+    = ($1, $2, $3, $4, $5)
+    WHERE id = $6;"
+    values = [@album_id, @quantity, @buy_price, @sell_price, @reorder_level, @id]
+    SqlRunner.run(sql, values)
   end
 
   def check_stock_level

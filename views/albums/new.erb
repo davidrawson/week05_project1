@@ -1,0 +1,28 @@
+<form class="" action="/albums" method="post">
+  <label for="title_input">Title
+    <input  id="title_input" type="text" name="title" value="">
+  </label>
+
+  <label for="artist_select">
+    Artist
+    <select id="Artist_select" class="" name="artist_id">
+      <% for artist in @artists  %>
+        <option value="<%= artist.id %>"><%= artist.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label for="format_select">Format
+    <select id="format_select" class="" name="format">
+      <option value="cd">CD</option>
+      <option value="vinyl">Vinyl</option>
+    </select>
+  </label>
+
+  <label for="thumb_url_input">Image URL (optional)</label>
+    <input id="thumb_url_input" type="text" name="thumb_url" value="">
+  </label>
+
+  <input class="" type='submit' value="Add Album">
+
+</form>
