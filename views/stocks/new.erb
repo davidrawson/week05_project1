@@ -1,0 +1,39 @@
+<form class="" action="stocks" method="post">
+  <label for="artist_select">
+    Artist
+    <select id="Artist_select" class="" name="artist_id">
+      <% for artist in @artists  %>
+        <option value="<%= artist.id %>"><%= artist.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label for="Album_select">
+    Album
+    <select id="Album_select" class="" name="album_id">
+      <% for album in @albums  %>
+        <option value="<%= album.id %>"><%= album.title %></option>
+      <% end %>
+    </select>
+  </label>
+
+
+  <label for="quantity_input">Quantity
+    <input id="quantity_input" type="text" name="quantity" value="">
+  </label>
+
+  <label for="buy_price_input">Buy Price
+    <input id="buy_url_input" type="text" name="buy_price" value="">
+  </label>
+
+  <label for="sell_price_input">Sell Price
+    <input id="sell_url_input" type="text" name="sell_price" value="">
+  </label>
+
+  <label for="reorder_level_input">Re-order Level
+    <input id="reorder_level_input" type="text" name="reorder_level" value="">
+  </label>
+
+  <input class="" type='submit' value="Add Stock">
+
+</form>

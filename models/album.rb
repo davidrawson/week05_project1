@@ -32,6 +32,14 @@ class Album
     #return result.map{|artist_hash| Artist.new(artist_hash)}
   end
 
+  def stock
+    sql = "SELECT * FROM stocks WHERE album_id = $1"
+    values = [@id]
+    result =  SqlRunner.run(sql, values)[0]
+    #binding.pry
+    return Stock.new(result)
+  end
+
   def self.delete_all()
     sql = "DELETE FROM albums"
     values = []

@@ -7,8 +7,8 @@ class Stock
   attr_accessor :quantity, :buy_price, :sell_price, :reorder_level
 
   def initialize (options)
-    @id = options['id'] if options['id']
-    @album_id = options['album_id']
+    @id = options['id'].to_i if options['id']
+    @album_id = options['album_id'].to_i
     @quantity = options['quantity'].to_i
     @buy_price = options['buy_price'].to_f
     @sell_price = options['sell_price'].to_f

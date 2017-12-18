@@ -1,0 +1,41 @@
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  /*border: 2px solid green;*/
+}
+
+th, td {
+  padding: 10px;
+}
+
+tbody td {
+  text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: grey;
+}
+
+tbody tr:nth-child(even) {
+  background-color: white;
+}
+
+.flex {
+  display: flex;
+  flex: auto;
+}
+
+.flex--row {
+  flex-direction: row;
+}
+
+main {
+  padding: 20px;
+}
+
+
+#yield_content {
+  padding-left: 15px;
+}
