@@ -22,14 +22,14 @@ class Album
     values = [@title, @artist_id, @format, @thumb_url]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
-    # Stock.blank_entry(@id)
+    #Stock.blank_entry(@id)
   end
 
   def update()
     sql = "UPDATE albums SET (title, artist_id, format, thumb_url) =
     ($1, $2, $3, $4)
-    WHERE id = $2;"
-    values = [@title, @artist_id, @format, @thumb_url]
+    WHERE id = $5;"
+    values = [@title, @artist_id, @format, @thumb_url, @id]
     SqlRunner.run(sql, values)
   end
 

@@ -31,3 +31,9 @@ post ('/albums/:id') do # SHOW
   Album.new( params ).update
   redirect to '/albums'
 end
+
+
+# post ('/artists/:id') do # SHOW
+#   Artist.new( params ).update
+#   redirect to '/artists'
+# end

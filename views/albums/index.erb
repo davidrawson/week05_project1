@@ -4,6 +4,7 @@
     <tr>
       <th>Album Title</th>
       <th>Artist</th>
+      <th>Format</th>
     </tr>
   </thead>
   <tbody>
@@ -12,6 +13,7 @@
         <a href="/albums/<%= album.id %>/edit">Edit Album Details</a>
           <td><%= album.title %></td>
           <td><%= album.artist.name %></td>
+          <td><%= album.format %></td>
       </tr>
     <% end %>
   </tbody>

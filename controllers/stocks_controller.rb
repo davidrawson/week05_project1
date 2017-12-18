@@ -21,3 +21,13 @@ post ('/stocks') do
   @stocks.save()
   erb ( :"stocks/create")
 end
+
+get ('/stocks/:id/edit') do
+  @stock = Stock.find( params[:id] )
+  erb( :"stocks/edit" )
+end
+
+post ('/stocks/:id') do # SHOW
+  Stock.new( params ).update
+  redirect to '/stocks'
+end
