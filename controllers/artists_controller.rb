@@ -18,3 +18,8 @@ post ('/artists') do
   @artist.save()
   erb( :"artists/create")
 end
+
+get ('/artists/:id/edit') do 
+  @artist = Artist.find( params[:id] )
+  erb( :edit )
+end

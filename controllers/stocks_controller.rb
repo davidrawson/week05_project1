@@ -2,9 +2,11 @@ require( 'pry-byebug' )
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative( '../models/stock.rb' )
+require_relative( '../models/album.rb' )
 
 get ('/stocks') do
   @stocks = Stock.all()
+  @albums = Album.all()
   erb ( :"stocks/index" )
 end
 

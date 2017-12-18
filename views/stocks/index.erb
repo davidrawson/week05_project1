@@ -1,0 +1,27 @@
+<table id="inventory_table">
+  <caption>Albums</caption>
+  <thead>
+    <tr>
+      <th>Album Title</th>
+      <th>Artist</th>
+      <th>Quantity</th>
+      <th>Buy Price</th>
+      <th>Sell Price</th>
+      <th>Re-order Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @albums.each do |album| %>
+      <tr>
+        <td><%= album.title %></td>
+        <td><%= album.artist.name %></td>
+        <td><%= album.stock.quantity %></td>
+        <td><%= album.stock.buy_price %></td>
+        <td><%= album.stock.sell_price %></td>
+        <td><%= album.stock.reorder_level %></td>
+        <p><a id="inventory_table" href="/albums/<%= album.id %>/edit">Edit Album Details</a></p>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>

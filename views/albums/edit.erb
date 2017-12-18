@@ -1,0 +1,34 @@
+<form method="post" action="/albums/<%= @album.id %>">
+  <label for="title">Title:</label>
+  <input
+  type="text"
+  name="title"
+  id="title"
+  value="<%= @album.title %>"
+  />
+
+  <label for="artist">Artist:</label>
+  <input
+  type="text"
+  name="artist"
+  id="artist"
+  value="<%= @album.artist_id %>"
+  />
+
+  <label for="format">Format:</label>
+  <select name="format" id="format">
+
+    <option
+    value="<%= @album.format %>"
+    <%= "selected" if @album.format == "vinyl" %>
+    >Vinyl</option>
+
+    <option
+    value="<%= @album.format %>"
+    <%= "selected" if @albu.format == "CD" %>
+    >CD</option>
+
+  </select>
+
+  <input type='submit' value="Edit Album">
+</form>

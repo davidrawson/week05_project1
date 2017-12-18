@@ -20,9 +20,9 @@ CREATE TABLE artists (
 CREATE TABLE stocks (
   id SERIAL4 PRIMARY KEY,
   album_id INT4 REFERENCES albums(id),
-  quantity INT4,
-  buy_price NUMERIC(6,2),
-  sell_price NUMERIC(6,2),
+  quantity INT4 DEFAULT 0,
+  buy_price NUMERIC(6,2) DEFAULT 0.00,
+  sell_price NUMERIC(6,2) DEFAULT 0.00,
   reorder_level INT2
 );
 

@@ -22,9 +22,16 @@ tbody tr:nth-child(even) {
   background-color: white;
 }
 
+.btn {
+  border:0px none;
+  border-radius: 3%;
+  padding: 8px 12px;
+  color: olive;
+  cursor:pointer;
+}
+
 .flex {
-  display: flex;
-  flex: auto;
+  display: inline-flex;
 }
 
 .flex--row {

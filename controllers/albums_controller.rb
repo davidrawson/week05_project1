@@ -21,3 +21,8 @@ post ('/albums') do
   @album.save()
   erb(:"albums/create")
 end
+
+# get ('/albums/:id/edit') do # edit
+#   @album = Album.find( params[:id] )
+#   erb( :edit )
+# end

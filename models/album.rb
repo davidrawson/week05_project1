@@ -22,6 +22,7 @@ class Album
     values = [@title, @artist_id, @format, @thumb_url]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
+    # Stock.blank_entry(@id)
   end
 
   def artist
@@ -38,6 +39,13 @@ class Album
     result =  SqlRunner.run(sql, values)[0]
     #binding.pry
     return Stock.new(result)
+  end
+
+  def self.find
+    sql = "SELECT * FROM albums WHERE id = $1"
+    values = [@id]
+    album = SqlRunner.run(sql, values)
+    return Pizza.new( pizza.first )
   end
 
   def self.delete_all()

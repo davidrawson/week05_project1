@@ -55,4 +55,13 @@ class Stock
     return results.map { |stock_hash| Stock.new(stock_hash) }
   end
 
+  # def self.blank_entry(id)
+  #   stock1 = Stock.new({
+  #     'album_id' => id,
+  #     'quantity' => '0',
+  #     'buy_price' => '0.00',
+  #     'sell_price' => '0.00',
+  #     'reorder_level' => '0' })
+  #   stock1.save()
+  # end
 end
