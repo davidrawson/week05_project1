@@ -22,7 +22,12 @@ post ('/albums') do
   erb(:"albums/create")
 end
 
-# get ('/albums/:id/edit') do # edit
-#   @album = Album.find( params[:id] )
-#   erb( :edit )
-# end
+get ('/albums/:id/edit') do # edit
+  @album = Album.find( params[:id] )
+  erb( :"albums/edit" )
+end
+
+post ('/albums/:id') do # SHOW
+  Album.new( params ).update
+  redirect to '/albums'
+end

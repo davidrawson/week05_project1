@@ -25,6 +25,14 @@ class Album
     # Stock.blank_entry(@id)
   end
 
+  def update()
+    sql = "UPDATE albums SET (title, artist_id, format, thumb_url) =
+    ($1, $2, $3, $4)
+    WHERE id = $2;"
+    values = [@title, @artist_id, @format, @thumb_url]
+    SqlRunner.run(sql, values)
+  end
+
   def artist
     sql = "SELECT * FROM artists WHERE id = $1"
     values = [@artist_id]
@@ -41,11 +49,11 @@ class Album
     return Stock.new(result)
   end
 
-  def self.find
+  def self.find(id)
     sql = "SELECT * FROM albums WHERE id = $1"
-    values = [@id]
+    values = [id]
     album = SqlRunner.run(sql, values)
-    return Pizza.new( pizza.first )
+    return Album.new( album.first )
   end
 
   def self.delete_all()

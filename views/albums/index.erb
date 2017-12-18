@@ -9,7 +9,7 @@
   <tbody>
     <% @albums.each do |album| %>
       <tr>
-        <input type="button" name="Edit" url="/albums/<%= album.id %>/edit" value="">
+        <a href="/albums/<%= album.id %>/edit">Edit Album Details</a>
           <td><%= album.title %></td>
           <td><%= album.artist.name %></td>
       </tr>

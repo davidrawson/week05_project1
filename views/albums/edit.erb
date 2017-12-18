@@ -7,13 +7,7 @@
   value="<%= @album.title %>"
   />
 
-  <label for="artist">Artist:</label>
-  <input
-  type="text"
-  name="artist"
-  id="artist"
-  value="<%= @album.artist_id %>"
-  />
+  <label for="artist">Artist: <%= @album.artist.name %></label>
 
   <label for="format">Format:</label>
   <select name="format" id="format">
@@ -25,10 +19,18 @@
 
     <option
     value="<%= @album.format %>"
-    <%= "selected" if @albu.format == "CD" %>
+    <%= "selected" if @album.format == "CD" %>
     >CD</option>
 
   </select>
+
+  <label for="thumb_url_input">Image URL:</label>
+  <input
+  type="text"
+  name="thumb_url"
+  id="thumb_url_input"
+  value="<%= @album.thumb_url %>"
+  />
 
   <input type='submit' value="Edit Album">
 </form>
