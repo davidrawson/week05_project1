@@ -12,7 +12,9 @@
 
   <input type="number" name="album_id" id="album-id-field" value="<%= @stock.album_id %>">
 
+  <!-- <button type="button" onclick="< % Stock.find(@stock.album_id).sell_item" name="< %= @stock.album_id %>">Sell Item</button> -->
 
+  <a href="" <% Stock.find(@stock.album_id).sell_item %> >Sell Item.</a>
 
   <input type="submit" value="Update Stock">
 </form>

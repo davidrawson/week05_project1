@@ -1,4 +1,3 @@
-<div class="flex--row">
 
 
 <table id="album_table">
@@ -8,6 +7,7 @@
       <th>Album Title</th>
       <th>Artist</th>
       <th>Format</th>
+      <th>Quantity</th>
     </tr>
   </thead>
   <tbody>
@@ -16,14 +16,10 @@
         <td><%= album.title %></td>
         <td><%= album.artist.name %></td>
         <td><%= album.format %></td>
-        <div class="album_index_buttons">
-          <input type="button" name="" value="<%= album.sell_item %>">
-        </div>
+        <td><%= album.stock.quantity %></td>
       </tr>
-      <button type="button" href="/albums/<%= album.id %>/edit">Edit Album Details</button>
+    <p><button type="button" href="/albums/<%= album.id %>/edit" >Edit Album Details<%= album.id %></button></p>
     <% end %>
   </tbody>
 
 </table>
-
-</div>
