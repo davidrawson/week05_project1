@@ -49,6 +49,10 @@ class Album
     return Stock.new(result)
   end
 
+  def sell_item
+    p "Hiya"
+  end
+
   def self.find(id)
     sql = "SELECT * FROM albums WHERE id = $1"
     values = [id]

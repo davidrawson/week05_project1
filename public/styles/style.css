@@ -1,4 +1,10 @@
 
+.album_table {
+  flex: auto;
+}
+
+
+
 table {
   table-layout: fixed;
   width: 100%;

@@ -1,3 +1,6 @@
+<div class="flex--row">
+
+
 <table id="album_table">
   <caption>Albums</caption>
   <thead>
@@ -10,12 +13,17 @@
   <tbody>
     <% @albums.each do |album| %>
       <tr>
-        <a href="/albums/<%= album.id %>/edit">Edit Album Details</a>
-          <td><%= album.title %></td>
-          <td><%= album.artist.name %></td>
-          <td><%= album.format %></td>
+        <td><%= album.title %></td>
+        <td><%= album.artist.name %></td>
+        <td><%= album.format %></td>
+        <div class="album_index_buttons">
+          <input type="button" name="" value="<%= album.sell_item %>">
+        </div>
       </tr>
+      <button type="button" href="/albums/<%= album.id %>/edit">Edit Album Details</button>
     <% end %>
   </tbody>
 
 </table>
+
+</div>

@@ -19,6 +19,7 @@ end
 post ('/albums') do
   @album = Album.new(params)
   @album.save()
+  Stock.blank_entry(@album.id)
   erb(:"albums/create")
 end
 

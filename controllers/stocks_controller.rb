@@ -27,7 +27,8 @@ get ('/stocks/:id/edit') do
   erb( :"stocks/edit" )
 end
 
-post ('/stocks/:id') do # SHOW
+post ('/stocks/:id') do
+  # binding.pry
   Stock.new( params ).update
   redirect to '/stocks'
 end
