@@ -1,6 +1,6 @@
-<h2>Total Sales: £ <%= Sale.till_value %></h2>
+<h2>Total Sales: £ <%= '%.2f' %Sale.till_value %></h2>
 
-<h2>Profit: £ <%= Sale.profit %></h2>
+<h2>Profit: £ <%= '%.2f' %Sale.profit %></h2>
 
 
 <table id="sales_table">
@@ -38,8 +38,8 @@
       <tr>
         <td><%= Album.find(sale.album_id).title %></td>
         <td><%= Artist.find(Album.find(sale.album_id).artist_id).name %></td>
-        <td><%= sale.buy_price %></td>
-        <td><%= sale.sell_price %></td>
+        <td><%= '%.2f' %sale.buy_price %></td>
+        <td><%= '%.2f' %sale.sell_price %></td>
       </tr>
     <% end %>
   </tbody>

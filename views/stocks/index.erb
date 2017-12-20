@@ -17,8 +17,8 @@
         <td><%= album.title %></td>
         <td><%= album.artist.name %></td>
         <td><%= album.stock.quantity %></td>
-        <td><%= album.stock.buy_price %></td>
-        <td><%= album.stock.sell_price %></td>
+        <td><%= '%.2f' %album.stock.buy_price %></td>
+        <td><%= '%.2f' %album.stock.sell_price %></td>
         <td><%= album.stock.reorder_level %></td>
         <td><%= album.stock.check_stock_level %></td>
         <p><a id="inventory_table" href="/stocks/<%= album.stock.id %>/edit">Update Inventory.</a></p>
