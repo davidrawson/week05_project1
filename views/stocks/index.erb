@@ -22,7 +22,11 @@
         <td><%= album.stock.reorder_level %></td>
         <td><%= album.stock.check_stock_level %></td>
         <p><a id="inventory_table" href="/stocks/<%= album.stock.id %>/edit">Update Inventory.</a></p>
+        <form class="" action="/stocks/<%= album.stock.id %>/sell_item" method="post">
+          <input type="submit" name="" value="Sell Item">
+        </form>
       </tr>
+
       <!-- <button type="button" onclick="< % Stock.sell_item(album.id) %>" name="<%= album.id %>">Sell Item</button> -->
     <% end %>
   </tbody>

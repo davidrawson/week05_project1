@@ -32,3 +32,10 @@ post ('/stocks/:id') do
   Stock.new( params ).update
   redirect to '/stocks'
 end
+
+post ('/stocks/:id/sell_item') do
+  # binding.pry
+  stock = Stock.find( params[:id] )
+  stock.sell_item
+  redirect to '/stocks'
+end
