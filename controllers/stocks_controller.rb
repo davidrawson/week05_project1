@@ -3,6 +3,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative( '../models/stock.rb' )
 require_relative( '../models/album.rb' )
+require_relative( '../models/sale.rb' )
 
 get ('/stocks') do
   @stocks = Stock.all()

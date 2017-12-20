@@ -1,11 +1,13 @@
 require_relative ('../models/artist')
 require_relative ('../models/album')
 require_relative ('../models/stock')
+require_relative ('../models/sale')
 require ('pry-byebug')
 
 Artist.delete_all()
 Stock.delete_all()
 Album.delete_all()
+Sale.delete_all()
 
 
 artist1 = Artist.new ({'name'=>'Adam and the Ants'})

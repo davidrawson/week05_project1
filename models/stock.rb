@@ -1,5 +1,5 @@
 require_relative ('../db/sql_runner')
-
+require_relative ('./sale.rb')
 
 class Stock
 
@@ -48,10 +48,11 @@ class Stock
     @quantity -= 1
     # binding.pry
     update
-    # add to sales table if all the time in the fucking world
-    # has'nt been lost to this bullshit
-    # Sales.new(album_id, buy_price, sell_price)
-
+    record_sale = Sale.new({
+      'album_id' => @id,
+      'buy_price' => @buy_price,
+      'sell_price' => @sell_price})
+    record_sale.save()
   end
 
   # This is a class method. The quantity for the whole table is being
@@ -65,6 +66,7 @@ class Stock
   #   stock_record.update
   #   # add to sales table - album id/buy price/sell price
   # end
+
 
   def self.find(id)
     sql = "SELECT * FROM stocks WHERE id = $1"
