@@ -6,8 +6,8 @@ require ('pry-byebug')
 
 Artist.delete_all()
 Stock.delete_all()
-Album.delete_all()
 Sale.delete_all()
+Album.delete_all()
 
 
 artist1 = Artist.new ({'name'=>'Adam and the Ants'})
@@ -114,6 +114,45 @@ stock9 = Stock.new({
   'sell_price' => '12.00',
   'reorder_level' => '8' })
 stock9.save()
+
+sale1 = Sale.new({
+  'album_id' => album9.id,
+  'buy_price' => '4.50',
+  'sell_price' => '12.00'})
+sale1.save()
+
+sale2 = Sale.new({
+  'album_id' => album9.id,
+  'buy_price' => '4.50',
+  'sell_price' => '12.00'})
+sale2.save()
+
+sale3 = Sale.new({
+  'album_id' => album3.id,
+  'buy_price' => '6.50',
+  'sell_price' => '12.00'})
+sale1.save()
+
+sale4 = Sale.new({
+  'album_id' => album9.id,
+  'buy_price' => '4.50',
+  'sell_price' => '12.00'})
+sale4.save()
+
+sale5 = Sale.new({
+  'album_id' => album7.id,
+  'buy_price' => '4.50',
+  'sell_price' => '10.00'})
+sale5.save()
+
+sale6 = Sale.new({
+  'album_id' => album7.id,
+  'buy_price' => '4.50',
+  'sell_price' => '10.00'})
+sale6.save()
+
+Sale.best_sellers
+
 
 binding.pry
 nil

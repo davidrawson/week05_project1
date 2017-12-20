@@ -21,12 +21,30 @@ class Sale
     @id = results.first()['id'].to_i
   end
 
+  def self.best_sellers
+    sql = "SELECT album_id,
+    COUNT (album_id)
+    FROM sales
+    GROUP BY album_id;"
+    values = []
+    result = SqlRunner.run(sql, values)
+
+    # binding.pry
+  end
+
   def self.delete_all
     sql = "DELETE FROM sales"
     values = []
     SqlRunner.run(sql, values)
   end
 
+  def self.all
+    sql = "SELECT * FROM sales"
+    values = []
+    sales = SqlRunner.run(sql, values)
+    result = sales.map{|sales_hash| Sale.new(sales_hash)}
+    return result
+  end
 
 
 end
