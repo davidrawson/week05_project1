@@ -2,6 +2,15 @@ main {
   padding: 20px;
 }
 
+header {
+  font-size: 80pt;
+  display: inline-flex;
+}
+
+h1 {
+  margin-top: 150px;
+}
+
 body {
   font-family: tahoma;
   background-color: Moccasin;
@@ -10,7 +19,7 @@ body {
 
 table {
   table-layout: fixed;
-  width: 90%;
+  width: 100%;
   border-collapse: collapse;
   align-self: right;
 }
@@ -50,6 +59,11 @@ tbody tr:nth-child(even) {
   cursor:pointer;
 }
 
+.--fw{
+  width: 150px;
+  margin-top: 30px
+}
+
 .flex {
   display: inline-flex;
 }
@@ -57,8 +71,17 @@ tbody tr:nth-child(even) {
 .flex--row {
   flex-direction: row;
 }
+.totals {
+  font-size: 24pt;
+  line-height: 1.5;
+}
+caption {
+  font-size: 24pt;
+}
 
-
+#bestsellers_table {
+  font-size: 16pt;
+}
 
 #yield_content {
   padding-left: 15px;

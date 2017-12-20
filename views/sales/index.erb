@@ -1,11 +1,13 @@
-<h2>Total Sales: £ <%= '%.2f' %Sale.till_value %></h2>
-
-<h2>Profit: £ <%= '%.2f' %Sale.profit %></h2>
+<div class="totals">
+  <h2>Total Sales: £ <%= '%.2f' %Sale.till_value %></h2>
+  <h2>Profit: £ <%= '%.2f' %Sale.profit %></h2>
+</div>
 
 <table id="bestsellers_table">
   <caption>Best Sellers</caption>
   <thead>
     <tr>
+      <th></th>
       <th>Album Title</th>
       <th>Artist</th>
       <th>Quantity Sold</th>
@@ -14,6 +16,7 @@
   <tbody>
     <% @bestsellers.each do |bestseller| %>
     <tr>
+      <td><img src="<%= Album.find(bestseller.album_id).thumb_url %>" width="80" height="80" alt=""> </td>
       <td><%= Album.find(bestseller.album_id).title %></td>
       <td><%= Artist.find(Album.find(bestseller.album_id).artist_id).name %></td>
       <td><%= bestseller.quantity %></td>
