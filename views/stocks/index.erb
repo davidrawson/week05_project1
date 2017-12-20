@@ -21,13 +21,17 @@
         <td><%= '%.2f' %album.stock.sell_price %></td>
         <td><%= album.stock.reorder_level %></td>
         <td><%= album.stock.check_stock_level %></td>
-        <p><a id="inventory_table" href="/stocks/<%= album.stock.id %>/edit">Update Inventory.</a></p>
-        <form class="" action="/stocks/<%= album.stock.id %>/sell_item" method="post">
-          <input type="submit" name="" value="Sell Item">
-        </form>
+        <td>
+          <form action="/stocks/<%= album.stock.id %>/edit" method="GET">
+            <input class="btn" type="submit" value="Update Inventory" />
+          </form>
+        </td>
+        <td>
+          <form class="" action="/stocks/<%= album.stock.id %>/sell_item" method="post">
+            <input class="btn" type="submit" name="" value="Sell Item">
+          </form>
+        </td>
       </tr>
-
-      <!-- <button type="button" onclick="< % Stock.sell_item(album.id) %>" name="<%= album.id %>">Sell Item</button> -->
     <% end %>
   </tbody>
 

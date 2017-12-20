@@ -17,9 +17,11 @@
         <td><%= album.artist.name %></td>
         <td><%= album.format %></td>
         <td><%= album.stock.quantity %></td>
-        <p><a id="album_table" href="/albums/<%= album.id %>/edit">Update Album.</a></p>
-
-        <!-- <p><button type="submit" href="/albums/<%= album.id %>/edit" >Edit Album Details<%= album.id %></button></p> -->
+        <td>
+          <form action="/albums/<%= album.id %>/edit" method="GET">
+            <input class="btn" type="submit" value="Update Album" />
+          </form>
+        </td>
       </tr>
     <% end %>
   </tbody>

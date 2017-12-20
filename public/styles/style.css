@@ -1,16 +1,30 @@
-
-.album_table {
-  flex: auto;
+main {
+  padding: 20px;
 }
 
+body {
+  font-family: tahoma;
+  background-color: Moccasin;
+}
 
 
 table {
   table-layout: fixed;
-  width: 100%;
+  width: 90%;
   border-collapse: collapse;
-  /*border: 2px solid green;*/
+  align-self: right;
 }
+
+.album_table {
+  flex: inline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: tahoma, cursive;
+  margin: 0px;
+  padding: 0px;
+}
+
 
 th, td {
   padding: 10px;
@@ -25,14 +39,14 @@ tbody tr:nth-child(odd) {
 }
 
 tbody tr:nth-child(even) {
-  background-color: white;
+  background-color: Moccasin;
 }
 
 .btn {
   border:0px none;
   border-radius: 3%;
   padding: 8px 12px;
-  color: olive;
+  color: black;
   cursor:pointer;
 }
 
@@ -44,9 +58,6 @@ tbody tr:nth-child(even) {
   flex-direction: row;
 }
 
-main {
-  padding: 20px;
-}
 
 
 #yield_content {
