@@ -131,7 +131,7 @@ sale3 = Sale.new({
   'album_id' => album3.id,
   'buy_price' => '6.50',
   'sell_price' => '12.00'})
-sale1.save()
+sale3.save()
 
 sale4 = Sale.new({
   'album_id' => album9.id,
@@ -151,7 +151,7 @@ sale6 = Sale.new({
   'sell_price' => '10.00'})
 sale6.save()
 
-Sale.best_sellers
+# Sale.best_sellers
 
 
 binding.pry

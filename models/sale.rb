@@ -1,5 +1,6 @@
 require_relative ('../db/sql_runner')
 require ('pry-byebug')
+require_relative ('./bestseller.rb')
 
 class Sale
 
@@ -21,15 +22,34 @@ class Sale
     @id = results.first()['id'].to_i
   end
 
-  def self.best_sellers
+  def self.till_value
+    sql = "SELECT SUM(sell_price) sell_price FROM sales"
+    values = []
+    total_sales = SqlRunner.run(sql, values)[0]['sell_price'].to_f
+    # binding.pry
+    return total_sales
+  end
+
+  def self.profit
+    sql = "SELECT SUM(buy_price) buy_price FROM sales"
+    values = []
+    total_buy_price = SqlRunner.run(sql, values)[0]['buy_price'].to_f
+    profit = self.till_value() - total_buy_price
+    return profit
+  end
+
+  def self.bestsellers
     sql = "SELECT album_id,
     COUNT (album_id)
     FROM sales
-    GROUP BY album_id;"
+    GROUP BY album_id
+    ORDER BY COUNT (album_id) DESC;"
     values = []
     result = SqlRunner.run(sql, values)
 
+    bestsellers = result.map{|result_hash| Bestseller.new(result_hash)}
     # binding.pry
+    return bestsellers
   end
 
   def self.delete_all
