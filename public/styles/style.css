@@ -4,6 +4,7 @@ main {
 
 header {
   font-size: 80pt;
+  line-height: 1.8;
   display: inline-flex;
 }
 
@@ -31,8 +32,9 @@ table {
 
 .new_artist{
   font-size: 18pt;
-  margin-top: 100px;
-  margin-left: 100px;
+  text-align: center;
+  /*margin-top: 100px;
+  margin-left: 100px;*/
 }
 .album_table {
   flex: inline;
@@ -65,9 +67,21 @@ tbody tr:nth-child(even) {
   border-color: black;
   border: 3px;
   border-radius: 3%;
-  padding: 8px 12px;
+  padding: 4px 8px;
   color: black;
   cursor:pointer;
+  font-size: 10pt;
+}
+
+input[type=text], [type=number]{
+    /*width: 100%;*/
+    padding: 8px 10px;
+    margin: 8px 0;
+    /*box-sizing: border-box;*/
+    font-size: 12pt;
+}
+select {
+  font-size: 20pt;
 }
 
 .--fw{
@@ -90,11 +104,12 @@ caption {
   font-size: 24pt;
 }
 
-.add_inventory_form{
-  font-size: 24pt;
-  line-height: 5;
-
+.add_form {
+  font-size: 20pt;
+  line-height: 2.2;
+  margin-left: 200px;
 }
+
 #bestsellers_table {
   font-size: 16pt;
 }

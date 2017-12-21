@@ -1,7 +1,8 @@
-<form class="" action="/albums" method="post">
+<form class="add_form" action="/albums" method="post">
   <label for="title_input">Title
     <input  id="title_input" type="text" name="title" value="">
   </label>
+  <br>
 
   <label for="artist_select">
     Artist
@@ -11,6 +12,7 @@
       <% end %>
     </select>
   </label>
+  <br>
 
   <label for="format_select">Format
     <select id="format_select" class="" name="format">
@@ -18,10 +20,12 @@
       <option value="vinyl">Vinyl</option>
     </select>
   </label>
+  <br>
 
   <label for="thumb_url_input">Image URL (optional)
     <input id="thumb_url_input" type="text" name="thumb_url" value="">
   </label>
+  <br>
 
   <input class="btn" type='submit' value="Add Album">
 
