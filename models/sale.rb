@@ -42,7 +42,8 @@ class Sale
     COUNT (album_id)
     FROM sales
     GROUP BY album_id
-    ORDER BY COUNT (album_id) DESC;"
+    ORDER BY COUNT (album_id) DESC
+    LIMIT 5;"
     values = []
     result = SqlRunner.run(sql, values)
     bestsellers = result.map{|result_hash| Bestseller.new(result_hash)}
