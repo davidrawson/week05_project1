@@ -14,7 +14,7 @@
   <tbody>
     <% @albums.each do |album| %>
       <tr>
-        <td><img src="<%= album.thumb_url %>"  width="80" height="80" aalt=""> </td>
+        <td><img src="<%= album.thumb_url %>"  width="80" height="80" alt=""> </td>
         <td><%= album.title %></td>
         <td><%= album.artist.name %></td>
         <td><%= album.format %></td>
