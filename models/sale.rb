@@ -26,7 +26,6 @@ class Sale
     sql = "SELECT SUM(sell_price) sell_price FROM sales"
     values = []
     total_sales = SqlRunner.run(sql, values)[0]['sell_price'].to_f
-    # binding.pry
     return total_sales
   end
 
@@ -46,9 +45,7 @@ class Sale
     ORDER BY COUNT (album_id) DESC;"
     values = []
     result = SqlRunner.run(sql, values)
-
     bestsellers = result.map{|result_hash| Bestseller.new(result_hash)}
-    # binding.pry
     return bestsellers
   end
 

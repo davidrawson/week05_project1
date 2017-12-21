@@ -151,8 +151,5 @@ sale6 = Sale.new({
   'sell_price' => '10.00'})
 sale6.save()
 
-# Sale.best_sellers
-
-
 binding.pry
 nil

@@ -22,7 +22,6 @@ class Album
     values = [@title, @artist_id, @format, @thumb_url]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
-    #Stock.blank_entry(@id)
   end
 
   def update()
@@ -38,19 +37,13 @@ class Album
     values = [@artist_id]
     result =  SqlRunner.run(sql, values)[0]
     return Artist.new(result)
-    #return result.map{|artist_hash| Artist.new(artist_hash)}
   end
 
   def stock
     sql = "SELECT * FROM stocks WHERE album_id = $1"
     values = [@id]
     result =  SqlRunner.run(sql, values)[0]
-    #binding.pry
     return Stock.new(result)
-  end
-
-  def sell_item
-    p "Hiya"
   end
 
   def self.find(id)

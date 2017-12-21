@@ -24,6 +24,16 @@ table {
   align-self: right;
 }
 
+.home_image {
+  margin-left: 80px;
+  margin-top: 30px;
+}
+
+.new_artist{
+  font-size: 18pt;
+  margin-top: 100px;
+  margin-left: 100px;
+}
 .album_table {
   flex: inline;
 }
@@ -52,7 +62,8 @@ tbody tr:nth-child(even) {
 }
 
 .btn {
-  border:0px none;
+  border-color: black;
+  border: 3px;
   border-radius: 3%;
   padding: 8px 12px;
   color: black;
@@ -79,10 +90,18 @@ caption {
   font-size: 24pt;
 }
 
+.add_inventory_form{
+  font-size: 24pt;
+  line-height: 5;
+
+}
 #bestsellers_table {
   font-size: 16pt;
 }
 
+#sales_table {
+  margin-top: 50pt;
+}
 #yield_content {
   padding-left: 15px;
 }

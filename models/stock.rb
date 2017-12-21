@@ -42,11 +42,9 @@ class Stock
     end
   end
 
-
   def sell_item
     return if @quantity < 1
     @quantity -= 1
-    # binding.pry
     update
     record_sale = Sale.new({
       'album_id' => @id,
@@ -54,19 +52,6 @@ class Stock
       'sell_price' => @sell_price})
     record_sale.save()
   end
-
-  # This is a class method. The quantity for the whole table is being
-  # affected. perhaps I need to find the right stock object from the
-  # html then make this an instance method THEN call it.
-  #def self.sell_item(id)
-    # stock_record = find(id)
-    # return if stock_record.quantity < 1
-    # stock_record.quantity -= 1
-    # # binding.pry
-  #   stock_record.update
-  #   # add to sales table - album id/buy price/sell price
-  # end
-
 
   def self.find(id)
     sql = "SELECT * FROM stocks WHERE id = $1"

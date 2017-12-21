@@ -6,7 +6,6 @@ require_relative( '../models/stock.rb' )
 
 
 get ('/albums') do
-  # @stocks = Stock.all
   @albums = Album.all
   erb ( :"albums/index")
 end
@@ -32,9 +31,3 @@ post ('/albums/:id') do # SHOW
   Album.new( params ).update
   redirect to '/albums'
 end
-
-
-# post ('/artists/:id') do # SHOW
-#   Artist.new( params ).update
-#   redirect to '/artists'
-# end
